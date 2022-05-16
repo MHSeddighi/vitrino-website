@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="all.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/index_style.css">
+    <style>
+      .button
+      {
+          background: transparent !important;
+          color: white;
+          border: 1px solid #999999;
+          font-weight: normal;
+          font-size: 12pt;
+          transition: background 0.3s;
+          padding: 10px 20px 10px 20px;
+          border-radius: 5px;
+      }
+      .button:hover
+      {
+          cursor: pointer;
+          background: #007bec !important;
+      }
+    </style>
+    <title>ویترینو</title>
+  </head>
+  <body>
+    <div style="background:url('images/bg.jpg');background-size:cover;background-repeat:no-repeat;clip-path: polygon(0 0, 100% 0, 100% 93%, 49% 99%, 0 91%);">
+      <div class="background-overlay"></div>
+      <nav class="navbar navbar-expand-sm w-100" style="text-align:center;">
+        <a class="navbar-brand" style="color:#fff;" href="index.html"><img src="icons/Capture-removebg-preview.png" style="margin-right:0px;padding-right:0;"/></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="FDMainMenu" aria-expanded="false" aria-label="نمایش فهرست">
+          <span class="navbar-toggler-icon"><i class="fas fa-list-alt text-light" style="font-size:23pt;"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-light" href="#">صفحه ی اصلی</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="about.html">درباره ی ما</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="p-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6 order-md-2">
+              <img src="images/maintenance.png" class="img w-100 h-100 mb-6 mb-md-0">
+            </div>
+            <div class="col-md-6 text-group order-md-1">
+              <b><h1 class="text-center title text-warning">
+                 <div id="typed-strings">
+                  <p>راه موفقیت رو طی کن!</p>
+                  <p>هدفمند زندگی کن!</p>
+                  <p>با برنامه زندگی کن!</p>
+                  <p>بازی کن و یاد بگیر!</p>
+                </div>
+                <span id="typed"></span>
+              </h1></b>
+              <p class="text-center mb-4 text-describe" style="color:#dedede;">
+                با ویترینو پل های ترقی رو طی کن.
+              </p>
+              <div class="text-center">
+                <a href="register.php" class="button">عضویت</a>
+                <a href="login_page.php" class="button">ورود</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="JS/typed.min.js" ></script>
+    <script>
+        var typed = new Typed('#typed', {
+        stringsElement: '#typed-strings',
+        typeSpeed: 200,
+        loop:true,
+        });
+    </script>
+    <p class="about_Project">چرا ویترینو؟<br><span style="margin-top:10px;color:#666666;font-size:13.5pt;font-weight:600;margin-bottom:0px;">ویترینو فراتر از یک ویترین ساده</span></p>
+    <p style="text-align:center;">_________________</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 px-2">
+          <center><div class="p-4 why-vitrino advanced" style="background:linear-gradient(180deg,#21c8f6,#637bff);">
+            <center><img src="icons/Industry-Automatic-icon.png" class="mb-3 icon" style="background:#2BBBF7;border-radius:10px;"/></center>
+            <p style="color:#e8e8e8;text-align:center;font-size:14pt;font-weight:bold;">برنامه ریزی هوشمند</p>
+            <div class="p-0 m-0 w-100 h-100 box" style="display:none;border-radius:12px;"><p id="advanced_content" style="text-align:center;font-size:11pt;font-weight:normal;color:#FFFFF8;position:absolute;top:50%;transform:translate(0px, -50%);" class="mx-4">تو ویترینو میتونی با برنامه ریزی هوشمند به تمام کارهای هفته برسی و از زمانت بهترین استفاده رو کنی.</p></div>
+          </div></center>
+        </div>
+        <div class="col-lg-4 px-2">
+          <center><div class="p-4 why-vitrino support" style="background:linear-gradient(180deg,#6edcc4,#1aab8b);">
+            <center><img src="icons/Support.svg" class="mb-3 icon" style="padding:6px;background:black;width:50px;height:50px;border-radius:10px;"/></center>
+            <p style="color:#e8e8e8;text-align:center;font-size:14pt;font-weight:bold;">پشتیبانی 24 ساعته</p>
+            <div class="p-0 m-0 w-100 h-100 box" style="display:none;border-radius:12px;"><p id="support_content" style="text-align:center;font-size:11pt;font-weight:normal;color:#FFFFF8;position:absolute;top:50%;transform:translate(0px, -50%);" class="mx-4">به هر مشکلی برخوردی با پشتیبانی 24 ساعته ویترینو در میون بذار تا در اسرع وقت بهت کمک کنیم.</p></div>
+          </div></center>
+        </div>
+        <div class="col-lg-4 px-2">
+          <center><div class="p-4 why-vitrino games" style="background:linear-gradient(0deg,#8b60ed,#b372bd);">
+            <center><img src="icons/Treetog-I-Games.ico" class="mb-3 icon"/></center>
+            <p style="color:#e8e8e8;text-align:center;font-size:14pt;font-weight:bold;">بازی های فکری جذاب</p>
+            <div class="p-0 m-0 w-100 h-100 box" style="display:none;border-radius:12px;"><p id="games_content" style="text-align:center;font-size:11pt;font-weight:normal;color:#FFFFF8;position:absolute;top:50%;transform:translate(0px, -50%);" class="mx-4">تو ویترینو میتونی برای اوقات فراغت خودت از بازی های فکری لذت ببری و همچنین طعم یادگیری رو بچشی.</p></div>
+          </center>
+        </div>
+      </div>
+    </div>
+    <footer class="site-footer mt-4">
+      <div class="footer-outline"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <div class="text-right" style="color:#dedede;line-height:26px;">
+              <img src="icons/Capture-removebg-preview.png"/>
+              <p class="text-justify" style="font-size:10.5pt;"><b># موفقیت شما آرزوی ماست.</b><br />در این مجموعه ما تلاش کردیم که کاری برای فرزندان کشورمان انجام دهیم تا زندگی هدفمندی داشته باشند و هدف گذاری را به آنها بیاموزیم و اوقات خوشی را برای آنها فراهم کنیم ،امیدواریم مورد پسند شما قرار گیرد.</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="mt-3">
+              <p class="text-left text-light" style="font-size:11pt;margin-left:15px;font-weight:normal;">پل ارتباطی ما با شما</p>
+              <a href="https://web.whatsapp.com/send?phone=09333848831" target="blank"><i class="fab fa-whatsapp whatsapp list-item" style="font-size:13pt;color:white;"></i></a>
+              <a href="https://instagram.com/amir_hossein_seddighi_86" target="blank"><i class="fab fa-instagram instagram list-item" style="font-size:13pt;color:white;"></i></a>
+              <a href="https://t.me/amir_seddighi" target="blank"><i class="fab fa-telegram-plane telegram list-item" style="font-size:13pt;color:white;"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

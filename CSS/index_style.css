@@ -1,0 +1,229 @@
+@font-face {
+	font-family: 'myFont';
+	src: url('../Fonts/iranyekanwebboldfanum.eot');
+	src: url('../Fonts/iranyekanwebboldfanum.woff') format('woff');
+	src: url('../Fonts/iranyekanwebboldfanum.woff2') format('woff2');
+	src: url('../Fonts/iranyekanwebboldfanum.ttf') format('truetype');
+	font-weight: normal !important;
+	font-style: none !important;
+}
+
+body
+{
+	font-family: 'myFont';
+	font-size: 11pt !important;
+	direction: rtl;
+	margin: 0px;
+}
+
+@media (max-width:992px) {
+	.title
+	{
+		font-size: 17pt !important;
+	}
+	.text-describe
+	{
+		font-size: 12pt !important;
+	}
+}
+
+@media (max-width:767px) {
+	.text-group
+	{
+		margin-top: 40px !important;
+	}
+}
+
+@media (max-width:406px) {
+	.why-vitrino
+	{
+		margin-bottom: 70px !important;
+		width: 100% !important;
+	}
+	.icon
+	{
+		width: 15% !important;
+		height: 17% !important;
+	}
+	.title
+	{
+		font-size: 14pt !important;
+	}
+	.text-describe
+	{
+		font-size: 10pt !important;
+	}
+}
+
+@media (min-width:406px) {
+	.icon
+	{
+		width: 50px !important;
+		height: 50px !important;
+	}
+}
+
+@-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+
+a
+{
+	color : white;
+}
+
+a:hover
+{
+	text-decoration : none;
+	color : white;
+}
+
+.background-overlay
+{
+	background-color: transparent;
+	background-image: linear-gradient(270deg, #7100B9 0%, #0C0090 100%);
+	opacity: .4;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.img
+{
+
+}
+
+.about_Project
+{
+	text-align : center;
+	margin-top : 60px;
+	font-size : 15pt;
+	font-weight : bold;
+	color : #222;
+}
+
+.why-vitrino
+{
+	border: solid 1px lightgray;
+	border-radius: 12px;
+	color: #4a4a4a;
+	position: relative;
+}
+
+.why-vitrino:hover
+{
+	cursor: pointer;
+	padding: 0px;
+}
+
+.advanced:hover .box
+{
+	display: block !important;
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.support:hover .box
+{
+	display: block !important;
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.games:hover .box
+{
+	display: block !important;
+	z-index: 999;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 0.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+.footer-outline
+{
+	height: 3px;
+  	margin-bottom:42px;
+  	width: 100%;
+  	background-image: linear-gradient(to right,#f76570 0,#f76570 8%,#f3a46b 8%,#f3a46b 16%,#f3a46b 16%,#ffd205 16%,#ffd205 24%,#ffd205 24%,#1bbc9b 24%,#1bbc9b 25%,#1bbc9b 32%,#14b9d5 32%,#14b9d5 40%,#c377e4 40%,#c377e4 48%,#f76570 48%,#f76570 56%,#f3a46b 56%,#f3a46b 64%,#ffd205 64%,#ffd205 72%,#1bbc9b 72%,#1bbc9b 80%,#14b9d5 80%,#14b9d5 80%,#14b9d5 89%,#c377e4 89%,#c377e4 100%);
+}
+
+.site-footer
+{
+  	background-color : #0D1E30;
+	padding-bottom: 20px;
+  	line-height:24px;
+	width : 100%;
+}
+.list-item{
+  	background-color: #222;
+  	color: #dedede;
+  	display: inline-block;
+  	line-height: 38px;
+  	width: 44px;
+  	height: 44px;
+  	text-align: center;
+  	border-radius: 100%;
+  	-webkit-transition: all .2s linear;
+  	-o-transition: all .2s linear;
+  	transition: all .2s linear;
+	border: 3px solid #404952;
+}
+.telegram:hover
+{
+	background-color: #2897CE;
+	cursor : pointer;
+}
+.whatsapp:hover
+{
+  	background-color : #2AB34C;
+	cursor : pointer;
+}
+.instagram:hover
+{
+  	background-color : #ED533E;
+	cursor : pointer;
+}
