@@ -31,7 +31,7 @@
         font-family: "myFont";
         font-size: 11pt !important;
         direction : rtl;
-        background: #fafafa;
+        background: #222;
         margin : 0px;
       }
       a
@@ -63,13 +63,73 @@
           margin-top: 30px !important;
         }
       }
-
-      .about_site
+      @media (max-width:992px)
       {
-        background: rgba(200, 200, 200, 0.2);
-        padding: 20px;
-        border-radius: 15px;
-        margin-top: 10px;
+        .slogan
+        {
+          margin-top: 30px !important;
+        }
+      }
+
+      @-webkit-keyframes swing-in-top-fwd {
+        0% {
+          -webkit-transform: rotateX(-100deg);
+                  transform: rotateX(-100deg);
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+          opacity: 0;
+        }
+        100% {
+          -webkit-transform: rotateX(0deg);
+                  transform: rotateX(0deg);
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+          opacity: 1;
+        }
+      }
+      @keyframes swing-in-top-fwd {
+        0% {
+          -webkit-transform: rotateX(-100deg);
+                  transform: rotateX(-100deg);
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+          opacity: 0;
+        }
+        100% {
+          -webkit-transform: rotateX(0deg);
+                  transform: rotateX(0deg);
+          -webkit-transform-origin: top;
+                  transform-origin: top;
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes kenburns-top-left {
+        0% {
+          -webkit-transform: scale(1) translate(0, 0);
+                  transform: scale(1) translate(0, 0);
+          -webkit-transform-origin: 10% 10%;
+                  transform-origin: 10% 10%;
+        }
+        100% {
+          -webkit-transform: scale(2) translate(-10px, -15px);
+                  transform: scale(2) translate(-10px, -15px);
+          -webkit-transform-origin: top left;
+                  transform-origin: top left;
+        }
+      }
+      @keyframes kenburns-top-left {
+        0% {
+          -webkit-transform: scale(1) translate(0, 0);
+                  transform: scale(1) translate(0, 0);
+          -webkit-transform-origin: 10% 10%;
+                  transform-origin: 10% 10%;
+        }
+        100% {
+          -webkit-transform: scale(2) translate(-10px, -15px);
+                  transform: scale(2) translate(-10px, -15px);
+          -webkit-transform-origin: top left;
+                  transform-origin: top left;
+        }
       }
 
       .programmers
@@ -77,12 +137,39 @@
         margin: 0px 2%;
       }
 
+      .img
+      {
+        background-color: #222;
+        border-radius: 20px;
+      }
+
+      .img:hover
+      {
+        -webkit-animation: kenburns-top-left 2s ease-out both;
+          animation: kenburns-top-left 2s ease-out both;
+      }
+
+      .img:hover ~ .programmer-content
+      {
+        display: block;
+        transition: all 2s ease-in;
+      }
+
+      mark
+      {
+        border-radius: 70px;
+        background: #F41E52;
+        color: rgb(211, 211, 211);
+        padding: 15px 40px;
+        cursor: pointer;
+      }
+
       .card {
         position: relative;
         display: block;
         height: 360px !important;
         border: none;
-        border-radius: calc(var(--curve) * 1px);
+        border-radius: 40px;
         overflow: hidden;
         cursor: pointer;
       }
@@ -99,7 +186,7 @@
         right: 0;
         z-index: 1;
         border-radius: calc(var(--curve) * 1px);    
-        background-color: #e8e8e8;      
+        background-color: #333;      
         transform: translateY(100%);
         transition: .2s ease-in-out;
       }
@@ -113,7 +200,7 @@
         padding: 20px;
         padding-bottom: 11px;
         border-radius: calc(var(--curve) * 1px) 0 0 0;    
-        background-color: rgba(255, 245, 255, 1);
+        background-color: #333;
         transform: translateY(-100%);
         transition: .2s ease-in-out;
       }       
@@ -130,7 +217,7 @@
 
       .card__title {
         font-size: 1em;
-        color: #000000;
+        color: #fff;
         text-align: right;
       }
 
@@ -143,38 +230,45 @@
 
       .card__status {
         font-size: .8em;
-        color: #808080;
+        color: lightgray;
         text-align: right;
       }
 
-      .skills 
+      .programmer-content 
       {
-        background-color: rgba(255, 245, 255, 1);
+        display: none;
+        z-index: 999;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
         text-align: right;
         padding: 25px;
+        border-radius: 20px;
         padding-top: 10px;
+        border: 1px solid #fff;
+        transition: all 2s ease-in;
       }
 
-      .skills ul 
+      .programmer-content ul 
       {
         list-style-type: none;
         margin: 0;
         padding: 0;
       }
 
-      .skills ul li 
+      .programmer-content ul li 
       {
-        background: #ffe6f6;
+        background: #ECBEDB;
         border-radius: 5px;
         display: inline-block;
         font-size: 12px;
         margin: 0 7px 7px 0;
         padding: 7px;
-        color: #999999;
+        color: #000;
       }
-      .skills ul li:hover 
+      .programmer-content ul li:hover 
       {
-        background-color: #FFDCF6;
+        background-color: #eba0cf;
         transition: all 0.2s ease-in-out;
         cursor: pointer;
       }
@@ -245,8 +339,8 @@
     </style>
   </head>
   <body>
-    <div class="w-100 text-light text-center pb-5" style="background:url('images/laptop-gb0fa01b0b_640.jpg');background-size:cover;background-color:rgba(0, 0, 0, 0.795);background-blend-mode:multiply;background-repeat:no-repeat;">
-      <nav class="navbar navbar-expand-sm w-100" style="text-align:center;">
+    <div class="w-100" style="padding-bottom:100px;background:#222;">
+      <nav class="navbar navbar-expand-sm w-100" style="text-align:center;background:#111;">
         <a class="navbar-brand" style="color:#fff;" href="index.html"><img src="icons/Capture-removebg-preview.png" style="margin-right:0px;padding-right:0;"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="FDMainMenu" aria-expanded="false" aria-label="نمایش فهرست">
           <span class="navbar-toggler-icon"><i class="fas fa-list-alt text-light" style="font-size:23pt;"></i></span>
@@ -262,28 +356,54 @@
           </ul>
         </div>
       </nav>
-      <div class="container">
-        <div class="about_site">
-          <h3># ویترینو سازنده آینده جوانان کشور</h3>
-          <p style="font-size:12pt;">در این وب اپ ما سعی کردیم تا بهترین وسیله برای ساختن آینده جوانان و نوجوانان را ایجاد کنیم تا فرزندان ماهدفهای خود را به صورت کاملا هوشمند برنامه ریزی کنند و از وضعیت برنامه خود به صورت روزانه اطلاع داشته باشندو یا برای اوقات فراغت خود از بازی های طراحی شده لذت ببرند و درعین حال لذت یادگیری را نیز بچشند.
-        امیدواریم که این وبسایت برای تمام اقشار جامعه مفید باشد.</p>
+      <div class="container-fluid" style="padding-top:50px;">
+        <div class="row m-2" style="background:#000;border-radius:20px;padding:20px;">
+          <div class="col-lg-6" style="overflow: hidden;">
+            <div>
+              <img src="images/background-removebg-preview.png" class="img w-100 h-100 mb-0">
+              <div class="programmer-content">
+                <h6 class="text-right mr-2 text-light">مهارت ها</h6>
+                <ul class="mt-3">
+                  <li>UI / UX</li>
+                  <li>Front End Development</li>
+                  <li>Back End Development</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                  <li>Bootstrap</li>
+                  <li>JQuery</li>
+                  <li>PHP</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-group text-right" style="align-self:center;">
+            <h3 class="slogan" style="color:#2AC2D2;"># ویترینو سازنده آینده جوانان کشور</h3>
+            <p style="font-size:12pt;color:#ECBEDB;">در این وب اپ ما سعی کردیم تا بهترین وسیله برای ساختن آینده جوانان و نوجوانان را ایجاد کنیم تا فرزندان ماهدفهای خود را به صورت کاملا هوشمند برنامه ریزی کنند و از وضعیت برنامه خود به صورت روزانه اطلاع داشته باشندو یا برای اوقات فراغت خود از بازی های طراحی شده لذت ببرند و درعین حال لذت یادگیری را نیز بچشند.
+            امیدواریم که این وبسایت برای تمام اقشار جامعه مفید باشد.</p>
+            <h2 style="color:#e8e8e8;margin-top:30px;"><span style="font-size:15pt;"><mark>امیر حسین صدیقی</mark> &nbsp;&nbsp;<mark>متین آذری</mark></span></h2>  
+          </div>
+        </div>
+        <div class="row" style="margin-top:140px;">
+          <div class="col-lg-6">
+            <div>
+              <img src="images/background-removebg-preview.png" class="img w-100 h-100 mb-0">
+              <div class="skills">
+                <h4 class="text-right mr-2 text-light">امیرحسین صدیقی</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-group text-right" style="align-self:center;">
+            <h3 class="slogan" style="color:#2AC2D2;"># ویترینو سازنده آینده جوانان کشور</h3>
+            <p style="font-size:12pt;color:#ECBEDB;">در این وب اپ ما سعی کردیم تا بهترین وسیله برای ساختن آینده جوانان و نوجوانان را ایجاد کنیم تا فرزندان ماهدفهای خود را به صورت کاملا هوشمند برنامه ریزی کنند و از وضعیت برنامه خود به صورت روزانه اطلاع داشته باشندو یا برای اوقات فراغت خود از بازی های طراحی شده لذت ببرند و درعین حال لذت یادگیری را نیز بچشند.
+            امیدواریم که این وبسایت برای تمام اقشار جامعه مفید باشد.</p>
+            <h2 style="color:#e8e8e8;margin-top:30px;"><span style="font-size:15pt;"><mark>امیر حسین صدیقی</mark> &nbsp;&nbsp;<mark>متین آذری</mark></span></h2>  
+          </div>
         </div>
       </div>
     </div><br />
-    <div class="w-100 h-100 p-4" style="background:url('images/developer.jpg');background-repeat:no-repeat;background-size:cover;background-position:center;">
-      <div class="d-flex programmers justify-content-end">
-        <div id="typed-strings">
-          <p class="text-warning" style="margin-left:auto;font-size:45pt;align-self:center;">طراحان سایت</p>
-        </div>
-        <span id="typed"></span>
-        <script src="JS/typed.min.js" ></script>
-        <script>
-            var typed = new Typed('#typed', {
-            stringsElement: '#typed-strings',
-            typeSpeed: 200,
-            loop:true,
-            });
-        </script>
+    <!-- <div class="w-100 h-100 p-4" style="background:#222;">
+      <div class="d-flex programmers justify-content-center mt-3">
         <div class="card ml-4">
           <img src="images/oYiTqum.jpg" class="card__image" alt="تصویر" />
           <div class="card__overlay">
@@ -295,7 +415,7 @@
               </div>
             </div>
             <div class="skills">
-              <h6 class="text-right mr-2 text-dark">مهارت ها</h6>
+              <h6 class="text-right mr-2 text-light">مهارت ها</h6>
               <ul class="mt-3">
                 <li>UI / UX</li>
                 <li>Front End Development</li>
@@ -321,7 +441,7 @@
               </div>
             </div>
             <div class="skills">
-              <h6 class="text-right mr-2 text-dark">مهارت ها</h6>
+              <h6 class="text-right mr-2 text-light">مهارت ها</h6>
               <ul class="mt-3" >
                 <li>Scratch</li>
               </ul>
@@ -329,7 +449,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <footer class="site-footer mt-4">
       <div class="footer-outline"></div>
       <div class="container">
