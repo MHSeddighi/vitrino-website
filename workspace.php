@@ -1,8 +1,11 @@
 <?php 
   session_start();
-  if(!isset($_SESSION['user_id'])){
-    header('location:login_page.php');
-    exit;
+  if(!isset($_COOKIE['savelogin']))
+  {
+    if(!isset($_SESSION['user_id'])){
+      header('location:login_page.php');
+      exit;
+    }
   }
 ?>
 <!DOCTYPE html>

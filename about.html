@@ -31,7 +31,6 @@
         font-family: "myFont";
         font-size: 11pt !important;
         direction : rtl;
-        background: #222;
         margin : 0px;
       }
       a
@@ -103,32 +102,59 @@
           opacity: 1;
         }
       }
-      @-webkit-keyframes kenburns-top-left {
-        0% {
-          -webkit-transform: scale(1) translate(0, 0);
-                  transform: scale(1) translate(0, 0);
-          -webkit-transform-origin: 10% 10%;
-                  transform-origin: 10% 10%;
+
+      @-webkit-keyframes scale
+      {
+        from { -webkit-transform: scale(1.15); }
+        to { -webkit-transform: scale(1); }
+      }
+      @keyframes scale
+      {
+        from { transform: scale(1.15); }
+        to { transform: scale(1); }
+      }
+
+      @-webkit-keyframes scale-reverse
+      {
+        from { -webkit-transform: scale(1); }
+        to { -webkit-transform: scale(1.07); }
+      }
+      @keyframes scale-reverse
+      {
+        from { transform: scale(1); }
+        to { transform: scale(1.07); }
+      }
+
+      @media (max-width: 992px) 
+      {
+
+        .banner
+        {
+          height: auto !important;
         }
-        100% {
-          -webkit-transform: scale(2) translate(-10px, -15px);
-                  transform: scale(2) translate(-10px, -15px);
-          -webkit-transform-origin: top left;
-                  transform-origin: top left;
+
+        .change-align
+        {
+          align-self: top !important;
+          margin-top: 30px !important;
+        }
+        .img
+        {
+          height: 700px !important;
         }
       }
-      @keyframes kenburns-top-left {
-        0% {
-          -webkit-transform: scale(1) translate(0, 0);
-                  transform: scale(1) translate(0, 0);
-          -webkit-transform-origin: 10% 10%;
-                  transform-origin: 10% 10%;
+      @media (max-width: 580px)
+      {
+        .img
+        {
+          height: 500px !important;
         }
-        100% {
-          -webkit-transform: scale(2) translate(-10px, -15px);
-                  transform: scale(2) translate(-10px, -15px);
-          -webkit-transform-origin: top left;
-                  transform-origin: top left;
+      }
+      @media (max-width: 400px)
+      {
+        .img
+        {
+          height: 350px !important;
         }
       }
 
@@ -139,28 +165,28 @@
 
       .img
       {
-        background-color: #222;
+        background: url('images/background-removebg-preview.png') no-repeat;
+        background-size: 100% 100%;
+        background-color: #441772;
+        padding: 18px 18px;
         border-radius: 20px;
       }
 
-      .img:hover
+      .img:hover .programmer-content
       {
-        -webkit-animation: kenburns-top-left 2s ease-out both;
-          animation: kenburns-top-left 2s ease-out both;
-      }
-
-      .img:hover ~ .programmer-content
-      {
-        display: block;
-        transition: all 2s ease-in;
+        -webkit-animation: scale .5s;
+                animation: scale .5s;
+        display: flex;
+        opacity: 1;
+        transition: all .5s ease-in;
       }
 
       mark
       {
-        border-radius: 70px;
+        border-radius: 10px;
         background: #F41E52;
-        color: rgb(211, 211, 211);
-        padding: 15px 40px;
+        color: rgb(230, 230, 230);
+        padding: 10px 30px;
         cursor: pointer;
       }
 
@@ -236,51 +262,31 @@
 
       .programmer-content 
       {
-        display: none;
-        z-index: 999;
-        width: 100%;
+        opacity: 0;
+        display: flex;
+        flex-direction: column;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        text-align: right;
+        z-index: 999;
+        background: rgba(110, 220, 196, .3);
         padding: 25px;
         border-radius: 20px;
-        padding-top: 10px;
-        border: 1px solid #fff;
-        transition: all 2s ease-in;
+        transition: all .5s ease-in;
       }
 
-      .programmer-content ul 
+      .programmer-content-hover-off
       {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-      }
-
-      .programmer-content ul li 
-      {
-        background: #ECBEDB;
-        border-radius: 5px;
-        display: inline-block;
-        font-size: 12px;
-        margin: 0 7px 7px 0;
-        padding: 7px;
-        color: #000;
-      }
-      .programmer-content ul li:hover 
-      {
-        background-color: #eba0cf;
-        transition: all 0.2s ease-in-out;
-        cursor: pointer;
+        -webkit-animation: scale-reverse .5s;
+                animation: scale-reverse .5s;
       }
 
       a:hover
       {
-        text-decoration : none;
-        color : white;
+        text-decoration: none;
+        color: white;
       }
       .nav-link:hover
       {
-        color : black;
+        color: black;
       }
 
       .footer-outline
@@ -308,39 +314,40 @@
       }
       .list-item
       {
-        background-color:#222;
-        color:#dedede;
-        display:inline-block;
-        line-height:38px;
-        width:44px;
-        height:44px;
-        text-align:center;
-        border-radius:100%;
-        -webkit-transition:all .2s linear;
-        -o-transition:all .2s linear;
-        transition:all .2s linear;
-        border : 3px solid #404952;
+        background: #222;
+        color: #dedede;
+        display: inline-block;
+        margin-bottom: 7px;
+        line-height: 40px;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        border-radius: 15px;
+        border: 2px solid #333;
+        -webkit-transition: all .2s linear;
+        -o-transition: all .2s linear;
+        transition: all .2s linear;
       }
       .telegram:hover
       {
-        background-color: #2897CE;
-        cursor : pointer;
+        background-color: #2897CE !important;
+        cursor: pointer;
       }
       .whatsapp:hover
       {
-        background-color : #2AB34C;
-        cursor : pointer;
+        background-color: #2AB34C !important;
+        cursor: pointer;
       }
       .instagram:hover
       {
-        background-color : #ED533E;
-        cursor : pointer;
+        background-color: #ED533E !important;
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
-    <div class="w-100" style="padding-bottom:100px;background:#222;">
-      <nav class="navbar navbar-expand-sm w-100" style="text-align:center;background:#111;">
+    <div class="w-100" style="padding-bottom:100px;background:#fafafa;">
+      <nav class="navbar navbar-expand-sm w-100" style="text-align:center;background:#441772;">
         <a class="navbar-brand" style="color:#fff;" href="index.html"><img src="icons/Capture-removebg-preview.png" style="margin-right:0px;padding-right:0;"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="FDMainMenu" aria-expanded="false" aria-label="نمایش فهرست">
           <span class="navbar-toggler-icon"><i class="fas fa-list-alt text-light" style="font-size:23pt;"></i></span>
@@ -357,47 +364,33 @@
         </div>
       </nav>
       <div class="container-fluid" style="padding-top:50px;">
-        <div class="row m-2" style="background:#000;border-radius:20px;padding:20px;">
-          <div class="col-lg-6" style="overflow: hidden;">
-            <div>
-              <img src="images/background-removebg-preview.png" class="img w-100 h-100 mb-0">
-              <div class="programmer-content">
-                <h6 class="text-right mr-2 text-light">مهارت ها</h6>
-                <ul class="mt-3">
-                  <li>UI / UX</li>
-                  <li>Front End Development</li>
-                  <li>Back End Development</li>
-                  <li>HTML</li>
-                  <li>CSS</li>
-                  <li>JavaScript</li>
-                  <li>Bootstrap</li>
-                  <li>JQuery</li>
-                  <li>PHP</li>
-                </ul>
-              </div>
+        <div class="row m-2 banner" style="background:linear-gradient(180deg,#21c8f6,#637bff);border-radius:20px;padding:20px;height:650px;">
+          <div class="col-lg-6 img">
+            <div class="programmer-content">
+              <h6 class="text-right mr-2 text-light">امیر حسین صدیقی</h6>
+              <a href="https://web.whatsapp.com/send?phone=09333848831" target="blank" style="margin-top:auto;"><i class="fab fa-whatsapp whatsapp list-item" style="font-size:13pt;color:white;display:block;float:left;border:none !important;line-height:43px !important;background:#333;"></i></a>
+              <a href="https://instagram.com/amir_hossein_seddighi_86" target="blank"><i class="fab fa-instagram instagram list-item" style="font-size:13pt;color:white;display:block;float:left;clear:both;border:none !important;line-height:43px !important;background:#333;"></i></a>
+              <a href="https://t.me/amir_seddighi" target="blank"><i class="fab fa-telegram-plane telegram list-item" style="font-size:13pt;color:white;display:block;float:left;clear:both;border:none !important;line-height:43px !important;background:#333;"></i></a>
             </div>
           </div>
-          <div class="col-lg-6 text-group text-right" style="align-self:center;">
-            <h3 class="slogan" style="color:#2AC2D2;"># ویترینو سازنده آینده جوانان کشور</h3>
-            <p style="font-size:12pt;color:#ECBEDB;">در این وب اپ ما سعی کردیم تا بهترین وسیله برای ساختن آینده جوانان و نوجوانان را ایجاد کنیم تا فرزندان ماهدفهای خود را به صورت کاملا هوشمند برنامه ریزی کنند و از وضعیت برنامه خود به صورت روزانه اطلاع داشته باشندو یا برای اوقات فراغت خود از بازی های طراحی شده لذت ببرند و درعین حال لذت یادگیری را نیز بچشند.
-            امیدواریم که این وبسایت برای تمام اقشار جامعه مفید باشد.</p>
-            <h2 style="color:#e8e8e8;margin-top:30px;"><span style="font-size:15pt;"><mark>امیر حسین صدیقی</mark> &nbsp;&nbsp;<mark>متین آذری</mark></span></h2>  
+          <div class="col-lg-6 text-group text-right change-align" style="align-self:center;">
+            <!-- <h2 style="color:#e8e8e8;margin-bottom:30px;font-size:14pt;"><mark>امیر حسین صدیقی</mark></h2> -->
+            <p style="font-size:12pt;color:#441772;">سلام.من اميرحسينم و علاقه ی شدیدی به برنامه نویسی وبسایت و کامپيوتر دارم و حدود 2 سال هست که در این حوزه فعالیت می کنم. من در طي اين دوسال با مباحث گوناگون سايت و برنامه نويسي فرانت و بک اند آشنا شدم و با زبان هاي HTML, CSS, JS, PHP ,SQL و فريمورک هاي JQuery, Bootstrap کار کردم.و همچنين با ديتابيس هاي SQLite, MySql کار کردم. همچنین من برای دفعه ی اول هست که در جشنواره خوارزمی شرکت می کنم و اهداف من از شرکت در این مسابقه بيشتر کسب رزومه و  افزایش توانایی در همکاري تيمي و کد زني  هست.</p> 
           </div>
         </div>
-        <div class="row" style="margin-top:140px;">
-          <div class="col-lg-6">
-            <div>
-              <img src="images/background-removebg-preview.png" class="img w-100 h-100 mb-0">
-              <div class="skills">
-                <h4 class="text-right mr-2 text-light">امیرحسین صدیقی</h4>
-              </div>
+        <div class="row m-2 banner" style="border-radius:20px;padding:20px;background:linear-gradient(180deg,#6edcc4,#1aab8b);height:650px;">
+          <div class="col-lg-6 img">
+            <div class="programmer-content">
+              <h6 class="text-right mr-2 text-light">متین آذری</h6>
+              <a href="https://web.whatsapp.com/send?phone=09379505192" target="blank" style="margin-top:auto;"><i class="fab fa-whatsapp whatsapp list-item" style="font-size:13pt;color:white;display:block;float:left;border:none !important;line-height:43px !important;background:#333;"></i></a>
+              <a href="https://instagram.com/matin.a.z1387" target="blank"><i class="fab fa-instagram instagram list-item" style="font-size:13pt;color:white;display:block;float:left;clear:both;border:none !important;line-height:43px !important;background:#333;"></i></a>
+              <a href="https://t.me/matin_az1387" target="blank"><i class="fab fa-telegram-plane telegram list-item" style="font-size:13pt;color:white;display:block;float:left;clear:both;border:none !important;line-height:43px !important;background:#333;"></i></a>
             </div>
           </div>
-          <div class="col-lg-6 text-group text-right" style="align-self:center;">
-            <h3 class="slogan" style="color:#2AC2D2;"># ویترینو سازنده آینده جوانان کشور</h3>
-            <p style="font-size:12pt;color:#ECBEDB;">در این وب اپ ما سعی کردیم تا بهترین وسیله برای ساختن آینده جوانان و نوجوانان را ایجاد کنیم تا فرزندان ماهدفهای خود را به صورت کاملا هوشمند برنامه ریزی کنند و از وضعیت برنامه خود به صورت روزانه اطلاع داشته باشندو یا برای اوقات فراغت خود از بازی های طراحی شده لذت ببرند و درعین حال لذت یادگیری را نیز بچشند.
-            امیدواریم که این وبسایت برای تمام اقشار جامعه مفید باشد.</p>
-            <h2 style="color:#e8e8e8;margin-top:30px;"><span style="font-size:15pt;"><mark>امیر حسین صدیقی</mark> &nbsp;&nbsp;<mark>متین آذری</mark></span></h2>  
+          <div class="col-lg-6 text-group text-right change-align" style="align-self:center;">
+            <!-- <h2 style="color:#e8e8e8;margin-bottom:30px;font-size:14pt;"><mark>متین آذری</mark></h2> -->
+            <p style="font-size:12pt;color:#441772;">سلام من متین هستم  . از بچگی کلا با کامپیوتر سر و کله داشتم و به هر چیز کامپیوتر علاقه دارم ولی برنامه نویسی یکی از بهترین این حوزه هست و من حدودیک سال میشه وارد این حوزه شدم . هدفم از شرکت در این مسابقه به چالش کشیدن خودم و تقویت روحیه همکاری با دوستانی هستم که کار بلدن به مثل امیر حسین .
+فعلا دو زبان برنامه نویسی c# و scratch رو بلدم و در آینده می‌خوام که زبان پایتون رو یاد بگیرم.</p>
           </div>
         </div>
       </div>
@@ -462,7 +455,7 @@
           </div>
           <div class="col-lg-5">
             <div class="mt-3">
-              <p class="text-left text-light" style="font-size:11pt;margin-left:15px;font-weight:normal;">پل ارتباطی ما با شما</p>
+              <p class="text-left text-light" style="font-size:11pt;margin-left:7px;font-weight:normal;">پل ارتباطی ما با شما</p>
               <a href="https://web.whatsapp.com/send?phone=09333848831" target="blank"><i class="fab fa-whatsapp whatsapp list-item" style="font-size:13pt;color:white;"></i></a>
               <a href="https://instagram.com/amir_hossein_seddighi_86" target="blank"><i class="fab fa-instagram instagram list-item" style="font-size:13pt;color:white;"></i></a>
               <a href="https://t.me/amir_seddighi" target="blank"><i class="fab fa-telegram-plane telegram list-item" style="font-size:13pt;color:white;"></i></a>
@@ -471,5 +464,15 @@
         </div>
       </div>
     </footer>
+    <script>
+      $(document).ready(function() {
+          $(".img").hover(
+              function () { },
+              function () {
+                  $(".programmer-content").addClass('programmer-content-hover-off');
+              }
+          );
+      });
+    </script>
   </body>
 </html>
